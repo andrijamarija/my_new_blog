@@ -6,9 +6,7 @@
 <main class="container" style="background-color: #fff">
     <section id="contact-us">
         <h1 style="padding-top: 50px;">Edit Post!</h1>
-        @if (session('status'))
-            <p style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 10px; border-radius: 5px; margin-bottom: 10px;">{{session('status')}}</p>
-        @endif
+        @include('includes.flash-messige')
 
 <!-- Contact Form -->
           <div class="contact-form">
