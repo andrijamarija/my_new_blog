@@ -4,6 +4,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,10 @@ use Illuminate\Support\Facades\Route;
 
 
 // Using controller
+
+Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
+
+Route::get('/post_page', [AdminController::class, 'post_page']);
 
 // To welcome page
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
